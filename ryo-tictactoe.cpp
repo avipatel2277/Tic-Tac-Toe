@@ -71,17 +71,21 @@ int main() {
 void printBoard(char board[3][3]) {
 	cout << "\n";
 	for (int i = 0; i < 3; i++) {
-		cout << " " << board[i][0] << " | " << board[i][1] << " | " << board[i][2] << "\n";
-		if (i < 2) cout << "---|---|---\n";
+		cout << " " << board[i][0] << " | " << board[i][1] << " | " << board[i][2] << "\n";	
+		if (i < 2) {
+			cout << "---|---|---\n";
+		}
 	}
 	cout << "\n";
 }
 
 bool makeMove(char board[3][3], int row, int col, char player) {
-	if (row < 0 || row > 2 || col < 0 || col > 2)
+	if (row < 0 || row > 2 || col < 0 || col > 2) {
 		return false;
-	if (board[row][col] != ' ')
+	}
+	if (board[row][col] != ' ') {
 		return false;
+	}
 	board[row][col] = player;
 	return true;
 }
@@ -101,8 +105,9 @@ bool checkWin(char board[3][3], char player) {
 bool checkDraw(char board[3][3]) {
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			if (board[i][j] == ' ')
+			if (board[i][j] == ' ') {
 				return false;
+			}
 		}
 	}
 	return true;
