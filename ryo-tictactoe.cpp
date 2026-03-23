@@ -30,6 +30,7 @@ int main() {
 			cin >> row;
 			cout << "Enter column (0-2): ";
 			cin >> col;
+
 			if (makeMove(board, row, col, currentPlayer)) {
 				if (checkWin(board, currentPlayer)) {
 					printBoard(board);
@@ -66,8 +67,6 @@ int main() {
 	cout << "Thanks for playing!\n";
 	return 0;
 }
-
-
 
 void printBoard(char board[3][3]) {
 	cout << "\n";
